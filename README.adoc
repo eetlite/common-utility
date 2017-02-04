@@ -1,0 +1,9 @@
+== Simple utilities for everything
+
+image:https://travis-ci.org/eetlite/common-utility.svg?branch=master["Build Status", link="https://travis-ci.org/eetlite/common-utility"] image:https://jitpack.io/v/eetlite/common-utility.svg["Release", link="https://jitpack.io/#eetlite/common-utility"]
+
+Utility:
+
+* String normalizer for text unification -> remove diacritics etc
+* URL resource loader for GET/POST methods
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.eetlite</groupId>
+		<artifactId>osslite-parent</artifactId>
+		<version>master-SNAPSHOT</version>
+		<relativePath />
+	</parent>
+
+	<artifactId>utility</artifactId>
+	<name>${project.artifactId}</name>
+	<packaging>jar</packaging>
+
+	<properties>
+		<git.url>ssh://git@bitbucket.evyvoj.cz:10000/com/utility.git</git.url>
+	</properties>
+
+	<build>
+		<finalName>${project.name}-${project.version}</finalName>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<developerConnection>scm:git:[fetch=]${git.url}[push=]${git.url}</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+	</dependencies>
+
+</project>
