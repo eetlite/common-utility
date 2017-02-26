@@ -6,9 +6,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.github.eetlite</groupId>
-		<artifactId>osslite-parent</artifactId>
-		<version>master-SNAPSHOT</version>
+		<groupId>cz.osslite.common</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath />
 	</parent>
 
@@ -26,8 +26,8 @@
 
 	<repositories>
 		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
+			<id>bintray-eetlite-eetlite</id>
+			<url>http://dl.bintray.com/eetlite/eetlite</url>
 		</repository>
 	</repositories>
 

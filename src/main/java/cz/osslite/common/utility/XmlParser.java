@@ -27,25 +27,8 @@ public class XmlParser {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		builderFactory.setNamespaceAware(true);
 
-		DocumentBuilder documentBuilder;
-		try {
-			documentBuilder = builderFactory.newDocumentBuilder();
-		} catch (ParserConfigurationException ex) {
-			logger.error("parser error", ex);
-			throw ex;
-		}
-
-		Document document;
-		try {
-			document = documentBuilder.parse(inputStream);
-		} catch (IOException ex) {
-			logger.error("io error", ex);
-			throw ex;
-		} catch (SAXException ex) {
-			logger.error("sax error", ex);
-			throw ex;
-		}
-
+		DocumentBuilder documentBuilder = builderFactory.newDocumentBuilder();
+		Document document = documentBuilder.parse(inputStream);
 		return document;
 	}
 
@@ -58,9 +41,9 @@ public class XmlParser {
 				bais.close();
 			} catch (Exception e) {
 				// just swallow
-				logger.error("error closing byte array input stream", e);
+				logger.warn("error closing byte array input stream", e);
 			}
 		}
-	}// end:
+	}
 
 }

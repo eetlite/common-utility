@@ -60,20 +60,15 @@ public class XmlBinder {
 	// // }
 	// }
 
-	public <T> T unmarshal(InputStream stream, Class<T> type) {
+	public <T> T unmarshal(InputStream stream, Class<T> type)
+			throws JAXBException, SAXException, IOException, ParserConfigurationException {
 		Assert.notNull(stream);
 		Assert.notNull(type);
 
-		try {
-			JAXBContext context = JAXBContext.newInstance(type);
-			JAXBElement<T> retObj = context.createUnmarshaller().unmarshal(xmlParser.parse(stream), type);
+		JAXBContext context = JAXBContext.newInstance(type);
+		JAXBElement<T> retObj = context.createUnmarshaller().unmarshal(xmlParser.parse(stream), type);
 
-			return retObj != null ? retObj.getValue() : null;
-		} catch (JAXBException | SAXException | ParserConfigurationException | IOException e) {
-			logger.warn("", e);
-		}
-
-		return null;
+		return retObj != null ? retObj.getValue() : null;
 	}
 
 }
